@@ -1,9 +1,10 @@
-import React from 'react'
-import getMenu from '../hooks/menus'
+import axios from "axios";
 
-export default function Header() {
-    getMenu("top-left-1")
+export default function MenuComponent() {
+
   return (
-    <div>H</div>
-  )
+    <div>
+      {/* Votre code d'affichage du menu */}
+    </div>
+  );
 }

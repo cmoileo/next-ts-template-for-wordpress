@@ -75,13 +75,24 @@ function wp_menu_single($data) {
     }
     
     if ($menuID) {
-        $menuDetails = wp_get_nav_menu_items($menuID);
-        return $menuDetails;
+        $menuItems = wp_get_nav_menu_items($menuID);
+
+        // Reformat the menu items to match the expected structure in the TypeScript code
+        $formattedMenuItems = array_map(function ($item) {
+            return array(
+                'menu_item_parent' => $item->menu_item_parent,
+                'title' => $item->title,
+                'url' => $item->url,
+                'classes' => $item->classes,
+            );
+        }, $menuItems);
+
+        return $formattedMenuItems;
     }
 }
 add_action( 'rest_api_init', function() {
-	register_rest_route( 'custom', '/menu/(?P<location>[\w-]+)', array(
-		'methods' => 'GET',
-		'callback' => 'wp_menu_single',
-	));
+    register_rest_route( 'custom', '/menu/(?P<location>[\w-]+)', array(
+        'methods' => 'GET',
+        'callback' => 'wp_menu_single',
+    ));
 });
