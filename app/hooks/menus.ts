@@ -1,19 +1,10 @@
 import axios from "axios";
-
-interface Item {
-  children: any;
-  parent: number;
-  ID: number,
-  title: string,
-  url: string,
-  classes: Array<string>,
-  menu_item_parent: string,
-}
+import { MenuItem } from "../type";
 
 export default async function getMenu(menuId: string) {
   try {
     const response = await axios.get(`${process.env.WP_URL}/wp-json/custom/menu/${menuId}`);
-    const menuItems = response.data.map((item: Item) => ({
+    const menuItems = response.data.map((item: MenuItem) => ({
       id: item.ID,
       title: item.title,
       url: item.url,
@@ -21,7 +12,7 @@ export default async function getMenu(menuId: string) {
       parent: parseInt(item.menu_item_parent),
       children: [],
     }));
-    menuItems.forEach((item: Item) => {
+    menuItems.forEach((item: MenuItem) => {
       if (item.parent > 0) {
         menuItems.find((x: { id: number; }) =>x.id === item.parent).children.push(item)
       }
