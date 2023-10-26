@@ -1,6 +1,6 @@
-import './assets/style/main.scss'
-import Footer from './layouts/footer'
-import Header from './layouts/header';
+import '../assets/style/main.scss'
+import Footer from '../layouts/footer'
+import Header from '../layouts/header';
 
 export default function RootLayout({
   children
