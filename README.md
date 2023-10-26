@@ -47,3 +47,11 @@ Once you have done it, in your Wordpress directory, go to wp-content/themes and 
 This will provide your Wordpress Backoffice custom functions that the Next frontend needs.\
 Finnaly, at the root of the Next directory, add a .env file with the variable "WP_URL" in it, like this : \
 WP_URL="https://your-wordpress-site.com"
+
+## Menus
+
+In the layout directory you'll find both header and footer. Both are already imported in the layout.tsx file. These components use the hook "menus.ts" that can be found in the hook directory. To call menus, you juste have to call the function getMenu with the id of your menu as a props.
+
+```javascript
+const menu = await getMenus("top-left-1"); //the name of the menu is displayed in the backoffice when you create a menu
+```
