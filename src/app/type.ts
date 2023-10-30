@@ -12,5 +12,7 @@ export interface Post {
   title: string,
   content: string,
   date: string,
-  categories: Object
+  categories: Object,
+  slug: string,
+  
 }
