@@ -14,5 +14,5 @@ export interface Post {
   date: string,
   categories: Object,
   slug: string,
-  
+  acfFields: Object
 }

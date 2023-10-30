@@ -9,9 +9,10 @@ export default async function getPostData(prop: string) {
     const date = postData.date;
     const categories = postData.categories;
     const slug = postData.slug
+    const acfFields = postData.acf
 
     const post: Post = {
-        title, content, date, categories, slug
+        title, content, date, categories, slug, acfFields
     }
 
     return post as Post;
