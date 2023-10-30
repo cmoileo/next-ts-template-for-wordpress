@@ -1,5 +1,5 @@
 import axios from "axios";
-import { MenuItem } from "../type";
+import { MenuItem } from "../app/type";
 
 export default async function getMenu(menuId: string) {
   try {

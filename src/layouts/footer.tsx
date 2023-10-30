@@ -1,15 +1,15 @@
 import getMenu from "../hooks/menus";
-import { MenuItem } from "../type";
+import { MenuItem } from "../app/type";
 
-export default async function MenuComponent() {
-  const menu = await getMenu("top-left-1")
+export default async function Footer() {
+  const menu = await getMenu("bottom-1")
 
   return (
-    <header>
+    <footer>
       <nav className="menu">
         {menu.length > 0 && menu.map((item: MenuItem, i: number) => (
-          <ul>
-            <a key={i} href={item.url}>
+          <ul key={i}>
+            <a href={item.url}>
               <li>{item.title}</li>
             </a>
               {
@@ -28,6 +28,6 @@ export default async function MenuComponent() {
           </ul>
         ))}
       </nav>
-    </header>
-  );
+    </footer>
+  )
 }

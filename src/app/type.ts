@@ -7,3 +7,12 @@ export interface MenuItem {
   classes: Array<string>,
   menu_item_parent: string,
 }
+
+export interface Post {
+  title: string,
+  content: string,
+  date: string,
+  categories: Object,
+  slug: string,
+  
+}

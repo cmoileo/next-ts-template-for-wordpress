@@ -55,3 +55,7 @@ In the layout directory you'll find both header and footer. Both are already imp
 ```javascript
 const menu = await getMenus("top-left-1"); //the name of the menu is displayed in the backoffice when you create a menu
 ```
+
+## Posts
+
+In the posts directory, you'll find a page that is the archive page and a page inside [slug] directory that is single post page. They both use hooks : the archive page uses getLastestPosts with a number as a prop (the number represents the number of posts to display); and the singlePage use getPost() with the post slug as a prop.
