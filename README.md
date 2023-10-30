@@ -59,3 +59,11 @@ const menu = await getMenus("top-left-1"); //the name of the menu is displayed i
 ## Posts
 
 In the posts directory, you'll find a page that is the archive page and a page inside [slug] directory that is single post page. They both use hooks : the archive page uses getLastestPosts with a number as a prop (the number represents the number of posts to display); and the singlePage use getPost() with the post slug as a prop.
+
+## ACF Fields
+
+In each page, you can call the hook getAcfFields with the page's slug as prop. To get ACF fields, don't forget to check the box "Display in the REST API" when you create your groupe fields in group's parameters. In post pages, ACF fields are already returned in the post datas.
+
+```javascript
+const fields = await getAcfPageFields("homepage"); // returns an object with all ACF fields
+```

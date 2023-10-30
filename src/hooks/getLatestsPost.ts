@@ -13,6 +13,7 @@ export default async function getLatestPosts(count: number): Promise<Post[]> {
         const categories = post.categories;
         const slug = post.slug;
         const tags = post.tags
+        const acfFields = post.acf
 
         return {
             title,
@@ -20,7 +21,8 @@ export default async function getLatestPosts(count: number): Promise<Post[]> {
             date,
             categories,
             slug,
-            tags
+            tags,
+            acfFields
         } as Post;
     });
 
