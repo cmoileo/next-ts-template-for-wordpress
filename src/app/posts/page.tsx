@@ -7,7 +7,7 @@ export default async function page() {
 
   return (
     <div>
-    <h2>Derniers articles</h2>
+    <h2>Latest articles</h2>
     <ul>
       {latestPosts.map((post, index) => (
         <li key={index}>
